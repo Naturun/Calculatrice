@@ -53,7 +53,7 @@ body {
     background-color: black;
     margin: 0;
     color: white;
-    font-size: 4em;
+    font-size: 4em; 
 }
 
 .operateur {grid-column: operateur;}
