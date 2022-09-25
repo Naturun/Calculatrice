@@ -20,7 +20,7 @@ body {
     grid-auto-columns: 100px;
     grid-auto-rows: 100px; 
 
-    grid-auto-flow: row dense;
+    grid-auto-flow: dense;
 
 }
 
@@ -56,20 +56,18 @@ body {
     font-size: 4em; 
 }
 
-.operateur {grid-column: operateur;}
+.operateur {
+    grid-column: operateur;
+    order: -1;
+}
 
 .delete {grid-row: delete;}
 
 .span-2 {grid-column-start: span 2;} 
 
-#div {grid-row: 2;}
-#mul {grid-row: 3;}
-#sous {grid-row: 4;}
-#add {grid-row: 5;}
-#egal {grid-row: 6; grid-column: span 2/-1}
 #point {grid-column: 1; grid-row: 6}
 
-
+#egal {grid-column: span 2/5;}
 
 
 
