@@ -1,7 +1,7 @@
 body {
+    display: grid; 
     background-color: rgb(0, 98, 128);
     height: 98vh; 
-    display: grid; 
 
     place-content: center; 
     font-family: Arial, Helvetica, sans-serif;
@@ -11,20 +11,19 @@ body {
     display: grid; 
     border: 1px solid black;
 
-    width: 21vw;
-    height: 65vh;
+    width: 400px;
+    height: 600px;
  
-    grid-template-columns: 1fr 1fr 1fr [operateur] 1fr;
-    grid-template-rows: [entry] auto [delete] repeat(5, 1fr);
+    grid-template-areas: "output output" 
+                         "deletes deletes"
+                         "numbers operators";
 
-    grid-auto-columns: 100px;
-    grid-auto-rows: 100px; 
-
-    grid-auto-flow: dense;
+    grid-template-columns: 300px 100px;
+    grid-template-rows: 100px 100px 400px;
 
 }
 
-.calc > button {
+.calc > div > button {
     place-content: center;
     
     border: 1px solid black;
@@ -32,18 +31,17 @@ body {
     font-size: x-large;
 }
 
-.calc > button:hover{
+.calc > div > button:hover{
     background-color: white;
     cursor: pointer;
 }
 
-.calc > button:active {
+.calc > div > button:active {
     background-color: aqua;
 }
 
-.entry {
-    grid-column: 1/-1;
-    grid-row: entry;
+.output {
+    grid-area: output;
 
     align-content: center;
     text-align: end;
@@ -56,21 +54,27 @@ body {
     font-size: 4em; 
 }
 
-.operateur {
-    grid-column: operateur;
-    order: -1;
+.operators {
+    display: grid;
+    grid-area: operators;
 }
 
-.delete {grid-row: delete;}
+.deletes {
+    display: grid;
+    grid-area: deletes;
 
-.span-2 {grid-column-start: span 2;} 
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    
+}
 
-#point {grid-column: 1; grid-row: 6}
+.numbers {
+    display: grid;
+    grid-area: numbers;
 
-#egal {grid-column: span 2/5;}
+    grid-template-columns: repeat(3,1fr);
+}
 
-
-
-
-
-
+#egal {
+    /* grid-column-end: span2; */
+}
